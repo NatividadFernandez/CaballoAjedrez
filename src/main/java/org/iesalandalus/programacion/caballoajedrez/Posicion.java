@@ -6,10 +6,10 @@ public class Posicion {
 	
 	private int fila;
 	private char columna;
-	private Color color;
+	/*private Color color;
 	
 	private final Color colorb = Color.BLANCO;
-	private final Color colorn = Color.NEGRO;
+	private final Color colorn = Color.NEGRO;*/
 	
 	// Constructores
 	
@@ -19,7 +19,42 @@ public class Posicion {
 		setColumna(columna);
 	}
 	
-	public Posicion(Color color) {
+	public Posicion(Posicion posicion) {
+		
+		if (posicion == null) {
+			throw new IllegalArgumentException("No se puede copiar una posicion nula.");
+		}		
+		this.fila = posicion.getFila();
+		this.columna = posicion.getColumna();
+		
+	}
+	
+	// Getters y Setters
+	
+	public int getFila() {
+		return fila;
+	}	
+	public void setFila(int fila) {
+		if(fila >= 1 && fila <= 8 ) {
+			this.fila = fila;
+		} else {
+			 throw new IllegalArgumentException("Número fuera del tablero");
+		}
+		
+	}
+	public char getColumna() {
+		return columna;
+	}
+	public void setColumna(char columna) {
+		if(columna <= 'a' && columna <= 'h') {
+			this.columna = columna;	
+		} else {
+			 throw new IllegalArgumentException("Letras fuera del tablero");
+		}
+		
+	}
+	
+	/*public Posicion(Color color) {
 	
 		if(this.color == colorb) {
 			this.fila = 1;
@@ -64,7 +99,7 @@ public class Posicion {
 		fila = fila;
 		color = color;
 		
-	}
+	}*/
 	
 	
 	
@@ -74,30 +109,7 @@ public class Posicion {
 	
 	
 	
-	// Getters y Setters
-	
-	public int getFila() {
-		return fila;
-	}	
-	public void setFila(int fila) throws IllegalArgumentException {
-		if(fila >= 1 && fila <= 8 ) {
-			this.fila = fila;
-		} else {
-			 throw new IllegalArgumentException("Número fuera del tablero");
-		}
-		
-	}
-	public char getColumna() {
-		return columna;
-	}
-	public void setColumna(char columna) throws IllegalArgumentException {
-		if(columna >= 'a' && columna <= 'h') {
-			this.columna = columna;	
-		} else {
-			 throw new IllegalArgumentException("Letras fuera del tablero");
-		}
-		
-	}
+
 	
 	
 
