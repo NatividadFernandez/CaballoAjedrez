@@ -18,10 +18,32 @@ public class Posicion {
 		if(this.color == colorb) {
 			this.fila = 1;
 			this.columna = 'b';
+			this.color = color;
 		} 
 		if (this.color == colorn) {
 			this.fila = 8;
 			this.columna = 'd';
+			this.color = color;
+		}
+		
+	}
+	
+	public Posicion(Color color,char columna) throws IllegalArgumentException {
+		
+		if(columna == 'b' || columna == 'g') {
+			if(this.color == colorb) {
+				this.columna = columna;
+				this.fila = 1;
+				this.color = color;
+			}
+			if (this.color == colorn) {
+				this.columna = columna;
+				this.fila = 8;
+				this.color = color;
+			}
+			
+		} else {
+			 throw new IllegalArgumentException("Letra no válida");
 		}
 		
 	}
