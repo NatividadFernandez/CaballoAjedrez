@@ -81,6 +81,16 @@ public class Posicion {
 		return true;
 	}
 	
+	// Metodo toString
+
+	@Override
+	public String toString() {
+		return "Posicion:" + fila + "," + columna;
+	}
+	
+	
+	
+	
 	
 	
 	/*public Posicion(Color color) {
