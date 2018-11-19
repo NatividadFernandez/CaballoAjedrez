@@ -6,13 +6,13 @@ import org.junit.Test;
 
 public class PosicionTest {
 
-	@Test
+	/*@Test
 	public void constructorValidoTest() {
 		Posicion posicion;
 		posicion = new Posicion(1, 'a');
 		assertEquals(1, posicion.getFila());
 		assertEquals('a', posicion.getColumna());
-	}
+	}*/
 	
 	/*@Test
 	public void constructorNoValidoTest() {
