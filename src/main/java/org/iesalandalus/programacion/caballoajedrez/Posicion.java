@@ -13,6 +13,12 @@ public class Posicion {
 	
 	// Constructores
 	
+	public Posicion(int fila, char columna) {
+		
+		setFila(fila);
+		setColumna(columna);
+	}
+	
 	public Posicion(Color color) {
 	
 		if(this.color == colorb) {
@@ -47,6 +53,20 @@ public class Posicion {
 		}
 		
 	}
+	
+	public Posicion(Posicion posicion) {
+		
+		if (posicion == null) {
+			throw new IllegalArgumentException("No se puede copiar una posicion nula.");
+		}
+		
+		columna = columna;
+		fila = fila;
+		color = color;
+		
+	}
+	
+	
 	
 	
 	
