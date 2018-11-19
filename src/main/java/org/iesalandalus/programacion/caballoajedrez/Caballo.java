@@ -17,6 +17,19 @@ public class Caballo {
 		this.color = colorn;
 	}
 	
+	public Caballo(Color color) {
+		
+		if(this.color == colorb) {
+			this.posicion = new Posicion(1,'b');
+			this.color = color;
+		} 
+		if (this.color == colorn) {
+			this.posicion = new Posicion(8,'d');
+			this.color = color;
+		}
+		
+	}
+	
 	// Getters y Setters
 	
 	public Color getColor() {

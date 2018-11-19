@@ -6,10 +6,6 @@ public class Posicion {
 	
 	private int fila;
 	private char columna;
-	/*private Color color;
-	
-	private final Color colorb = Color.BLANCO;
-	private final Color colorn = Color.NEGRO;*/
 	
 	// Constructores
 	
