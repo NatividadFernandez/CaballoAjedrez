@@ -13,7 +13,7 @@ public class CaballoTest {
 	private Posicion posicionNegroG = new Posicion(8, 'g');
 	private Posicion posicionBlancoG = new Posicion(1, 'g');
 
-	/*@Test
+	@Test
 	public void constructorDefectoTest() {
 		Caballo caballo = new Caballo();
 		assertEquals(Color.NEGRO, caballo.getColor());
@@ -28,9 +28,9 @@ public class CaballoTest {
 		assertEquals(posicionDefectoNegro, caballoNegro.getPosicion());
 		assertEquals(Color.BLANCO, caballoBlanco.getColor());
 		assertEquals(posicionDefectoBlanco, caballoBlanco.getPosicion());
-	}*/
+	}
 	
-	/*@Test
+	@Test
 	public void constructorUnParametroNoValidoTest() {
 		Caballo caballo = null;
 		try {
@@ -40,9 +40,9 @@ public class CaballoTest {
 			assertEquals("ERROR: No se puede asignar un color nulo.", e.getMessage());
 			assertNull(caballo);
 		}
-	}*/
+	}
 	
-/*	@Test
+    @Test
 	public void constructorDosParametrosValidoTest() {
 		Caballo caballoBlancoDefecto = new Caballo(Color.BLANCO, 'b');
 		Caballo caballoNegroDefecto = new Caballo(Color.NEGRO, 'b');
@@ -52,9 +52,9 @@ public class CaballoTest {
 		assertEquals(posicionDefectoNegro, caballoNegroDefecto.getPosicion());
 		assertEquals(posicionBlancoG, caballoBlancoG.getPosicion());
 		assertEquals(posicionNegroG, caballoNegroG.getPosicion());
-	}*/
+	}
 	
-	/*@Test
+	@Test
 	public void constructorDosParametrosNoValidoTest() {
 		Caballo caballoMalPosicionadoInicialmente = null;
 		try {
@@ -103,7 +103,7 @@ public class CaballoTest {
 		}
 	}
 	
-	@Test
+	/*@Test
 	public void movimientoNoValidoTest() {
 		Caballo caballoNegroDefecto = new Caballo();
 		Caballo caballoBlancoG = new Caballo(Color.BLANCO, 'g');

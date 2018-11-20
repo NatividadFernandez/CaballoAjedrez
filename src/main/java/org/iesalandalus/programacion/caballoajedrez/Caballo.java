@@ -2,16 +2,14 @@ package org.iesalandalus.programacion.caballoajedrez;
 
 import static org.junit.Assert.assertEquals;
 
+import javax.naming.OperationNotSupportedException;
+
 public class Caballo {
 
 	// Variables
 	private Color color;
 	private Posicion posicion;
-
-	/*
-	 * private final Color colorb = Color.BLANCO; private final Color colorn =
-	 * Color.NEGRO;
-	 */
+	private static final String ERROR_MOVIMIENTO = "Movimiento no permitido: ";
 
 	// Constructores
 
@@ -22,6 +20,10 @@ public class Caballo {
 	}
 
 	public Caballo(Color color) {
+		
+		if (color == null) {
+			throw new IllegalArgumentException("ERROR: No se puede asignar un color nulo.");
+		}
 
 		if (color.equals(Color.BLANCO)) {
 			this.posicion = new Posicion(1, 'b');
@@ -34,7 +36,12 @@ public class Caballo {
 
 	}
 
-	public Caballo(Color color, char columna) {
+	public Caballo(Color color, char columna) {	
+		
+		if (color == null) {
+			throw new IllegalArgumentException("ERROR: No se puede asignar un color nulo.");
+		}
+		
 
 		if (columna == 'b' || columna == 'g') {
 			if (color.equals(Color.BLANCO)) {
@@ -47,12 +54,12 @@ public class Caballo {
 			}
 
 		} else {
-			throw new IllegalArgumentException("Letra no válida");
+			throw new IllegalArgumentException("ERROR: Columna inicial no vÃ¡lida.");
 		}
 
 	}
 
-	public Caballo(Caballo caballo) {
+	/*public Caballo(Caballo caballo) {
 
 		if (caballo == null) {
 			throw new IllegalArgumentException("No se puede copiar un caballo nulo.");
@@ -60,7 +67,7 @@ public class Caballo {
 		this.color = caballo.getColor();
 		this.posicion = new Posicion(caballo.getPosicion());
 
-	}
+	}*/
 
 	// Getters y Setters
 
@@ -78,6 +85,91 @@ public class Caballo {
 
 	public void setPosicion(Posicion posicion) {
 		this.posicion = posicion;
+	}
+	
+	public void mover(Direccion direccion/*, int pasos*/) throws OperationNotSupportedException {
+		if (direccion == null) {
+			throw new IllegalArgumentException("La dirección no puede ser nula.");
+		}
+		/*if (pasos <= 0) {
+			throw new IllegalArgumentException("El número de pasos debe ser mayor que cero.");
+		}*/
+		switch (direccion) {
+			case ARRIBA_DERECHA:
+				try {
+					posicion.setFila(posicion.getColumna()/* + pasos*/); // Arriba
+					posicion.setFila(posicion.getFila() /*+ pasos*/); // Derecha					
+				} catch (IllegalArgumentException e) {
+					throw new OperationNotSupportedException(ERROR_MOVIMIENTO + e.getMessage());
+				}
+				break;
+				
+			case ABAJO_DERECHA:
+				try {
+					posicion.setFila(posicion.getColumna()/* - pasos*/); //Abajo
+					posicion.setFila(posicion.getFila()/* + pasos*/); // Derecha					
+				} catch (IllegalArgumentException e) {
+					throw new OperationNotSupportedException(ERROR_MOVIMIENTO + e.getMessage());
+				}
+				break;
+				
+			case ARRIBA_IZQUIERDA:
+				try {
+					posicion.setFila(posicion.getColumna() /*+ pasos*/); // Arriba
+					posicion.setFila(posicion.getFila()/* - pasos*/); // Izquierda					
+				} catch (IllegalArgumentException e) {
+					throw new OperationNotSupportedException(ERROR_MOVIMIENTO + e.getMessage());
+				}
+				break;
+				
+			case ABAJO_IZQUIERDA:
+				try {
+					posicion.setFila(posicion.getColumna() /*- pasos*/); //Abajo
+					posicion.setFila(posicion.getFila() /*- pasos*/); // Izquierda					
+				} catch (IllegalArgumentException e) {
+					throw new OperationNotSupportedException(ERROR_MOVIMIENTO + e.getMessage());
+				}
+				break;
+				
+			case DERECHA_ARRIBA:
+				try {
+					posicion.setFila(posicion.getFila()/* + pasos*/); // Derecha
+					posicion.setFila(posicion.getColumna() /*+ pasos*/); // Arriba										
+				} catch (IllegalArgumentException e) {
+					throw new OperationNotSupportedException(ERROR_MOVIMIENTO + e.getMessage());
+				}
+				break;
+				
+			case DERECHA_ABAJO:
+				try {
+					posicion.setFila(posicion.getFila()/* + pasos*/); // Derecha
+					posicion.setFila(posicion.getColumna() /*- pasos*/); //Abajo										
+				} catch (IllegalArgumentException e) {
+					throw new OperationNotSupportedException(ERROR_MOVIMIENTO + e.getMessage());
+				}
+				break;
+				
+			case IZQUIERDA_ARRIBA:
+				try {
+					posicion.setFila(posicion.getFila()/* - pasos*/); // Izquierda
+					posicion.setFila(posicion.getColumna()/* + pasos*/); // Arriba										
+				} catch (IllegalArgumentException e) {
+					throw new OperationNotSupportedException(ERROR_MOVIMIENTO + e.getMessage());
+				}
+				break;
+				
+			case IZQUIERDA_ABAJO:
+				try {
+					posicion.setFila(posicion.getFila() /*- pasos*/); // Izquierda
+					posicion.setFila(posicion.getColumna() /*- pasos*/); //Abajo										
+				} catch (IllegalArgumentException e) {
+					throw new OperationNotSupportedException(ERROR_MOVIMIENTO + e.getMessage());
+				}
+				break;				
+		
+			default:
+				break;
+		}
 	}
 
 }

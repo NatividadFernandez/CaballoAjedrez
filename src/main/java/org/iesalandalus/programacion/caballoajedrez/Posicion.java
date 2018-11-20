@@ -1,56 +1,62 @@
 package org.iesalandalus.programacion.caballoajedrez;
 
 public class Posicion {
-	
+
 	// Variables
-	
+
 	private int fila;
 	private char columna;
-	
+
 	// Constructores
-	
+
 	public Posicion(int fila, char columna) {
-		
+
 		setFila(fila);
 		setColumna(columna);
 	}
-	
+
 	public Posicion(Posicion posicion) {
-		
+
 		if (posicion == null) {
-			throw new IllegalArgumentException("No se puede copiar una posicion nula.");
-		}		
-		this.fila = posicion.getFila();
-		this.columna = posicion.getColumna();
-		
+			throw new IllegalArgumentException("ERROR: No es posible copiar una posiciÃ³n nula.");
+		} else {
+			this.fila = posicion.getFila();
+			this.columna = posicion.getColumna();
+		}
+
 	}
-	
+
 	// Getters y Setters
-	
+
 	public int getFila() {
 		return fila;
-	}	
+	}
+
 	public void setFila(int fila) {
-		if(fila >= 1 && fila <= 8 ) {
+
+		if (fila >= 1 && fila <= 8) {
 			this.fila = fila;
 		} else {
-			 throw new IllegalArgumentException("Número fuera del tablero");
+			throw new IllegalArgumentException("ERROR: Fila no vÃ¡lida.");
 		}
-		
+
 	}
+
 	public char getColumna() {
 		return columna;
 	}
+
 	public void setColumna(char columna) {
-		if(columna >= 'a' && columna <= 'h') {
-			this.columna = columna;	
+
+		if (columna >= 'a' && columna <= 'h') {
+			this.columna = columna;
 		} else {
-			 throw new IllegalArgumentException("Letras fuera del tablero");
+			throw new IllegalArgumentException("ERROR: Columna no vÃ¡lida.");
 		}
-		
+
 	}
-	
-	//Metodos equals y hascode
+
+	// Metodos equals y hascode
 
 	@Override
 	public int hashCode() {
@@ -76,62 +82,12 @@ public class Posicion {
 			return false;
 		return true;
 	}
-	
+
 	// Metodo toString
 
 	@Override
 	public String toString() {
 		return "[fila=" + fila + ", columna=" + columna + "]";
 	}
-	
-	
-	
-	
-	
-	
-	/*	
-	public Posicion(Color color,char columna) throws IllegalArgumentException {
-		
-		if(columna == 'b' || columna == 'g') {
-			if(this.color == colorb) {
-				this.columna = columna;
-				this.fila = 1;
-				this.color = color;
-			}
-			if (this.color == colorn) {
-				this.columna = columna;
-				this.fila = 8;
-				this.color = color;
-			}
-			
-		} else {
-			 throw new IllegalArgumentException("Letra no válida");
-		}
-		
-	}
-	
-	public Posicion(Posicion posicion) {
-		
-		if (posicion == null) {
-			throw new IllegalArgumentException("No se puede copiar una posicion nula.");
-		}
-		
-		columna = columna;
-		fila = fila;
-		color = color;
-		
-	}*/
-	
-	
-	
-	
-	
-	
-	
-	
-	
-
-	
-	
 
 }
