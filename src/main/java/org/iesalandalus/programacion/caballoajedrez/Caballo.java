@@ -100,7 +100,7 @@ public class Caballo {
 					posicion.setFila(posicion.getColumna()/* + pasos*/); // Arriba
 					posicion.setFila(posicion.getFila() /*+ pasos*/); // Derecha					
 				} catch (IllegalArgumentException e) {
-					throw new OperationNotSupportedException(ERROR_MOVIMIENTO + e.getMessage());
+					throw new OperationNotSupportedException("ERROR: Movimiento no válido.");
 				}
 				break;
 				
@@ -109,7 +109,7 @@ public class Caballo {
 					posicion.setFila(posicion.getColumna()/* - pasos*/); //Abajo
 					posicion.setFila(posicion.getFila()/* + pasos*/); // Derecha					
 				} catch (IllegalArgumentException e) {
-					throw new OperationNotSupportedException(ERROR_MOVIMIENTO + e.getMessage());
+					throw new OperationNotSupportedException("ERROR: Movimiento no válido.");
 				}
 				break;
 				
@@ -118,7 +118,7 @@ public class Caballo {
 					posicion.setFila(posicion.getColumna() /*+ pasos*/); // Arriba
 					posicion.setFila(posicion.getFila()/* - pasos*/); // Izquierda					
 				} catch (IllegalArgumentException e) {
-					throw new OperationNotSupportedException(ERROR_MOVIMIENTO + e.getMessage());
+					throw new OperationNotSupportedException("ERROR: Movimiento no válido.");
 				}
 				break;
 				
@@ -127,7 +127,7 @@ public class Caballo {
 					posicion.setFila(posicion.getColumna() /*- pasos*/); //Abajo
 					posicion.setFila(posicion.getFila() /*- pasos*/); // Izquierda					
 				} catch (IllegalArgumentException e) {
-					throw new OperationNotSupportedException(ERROR_MOVIMIENTO + e.getMessage());
+					throw new OperationNotSupportedException("ERROR: Movimiento no válido.");
 				}
 				break;
 				
@@ -136,7 +136,7 @@ public class Caballo {
 					posicion.setFila(posicion.getFila()/* + pasos*/); // Derecha
 					posicion.setFila(posicion.getColumna() /*+ pasos*/); // Arriba										
 				} catch (IllegalArgumentException e) {
-					throw new OperationNotSupportedException(ERROR_MOVIMIENTO + e.getMessage());
+					throw new OperationNotSupportedException("ERROR: Movimiento no válido.");
 				}
 				break;
 				
@@ -145,7 +145,7 @@ public class Caballo {
 					posicion.setFila(posicion.getFila()/* + pasos*/); // Derecha
 					posicion.setFila(posicion.getColumna() /*- pasos*/); //Abajo										
 				} catch (IllegalArgumentException e) {
-					throw new OperationNotSupportedException(ERROR_MOVIMIENTO + e.getMessage());
+					throw new OperationNotSupportedException("ERROR: Movimiento no válido.");
 				}
 				break;
 				
@@ -154,7 +154,7 @@ public class Caballo {
 					posicion.setFila(posicion.getFila()/* - pasos*/); // Izquierda
 					posicion.setFila(posicion.getColumna()/* + pasos*/); // Arriba										
 				} catch (IllegalArgumentException e) {
-					throw new OperationNotSupportedException(ERROR_MOVIMIENTO + e.getMessage());
+					throw new OperationNotSupportedException("ERROR: Movimiento no válido.");
 				}
 				break;
 				
@@ -163,7 +163,7 @@ public class Caballo {
 					posicion.setFila(posicion.getFila() /*- pasos*/); // Izquierda
 					posicion.setFila(posicion.getColumna() /*- pasos*/); //Abajo										
 				} catch (IllegalArgumentException e) {
-					throw new OperationNotSupportedException(ERROR_MOVIMIENTO + e.getMessage());
+					throw new OperationNotSupportedException("ERROR: Movimiento no válido.");
 				}
 				break;				
 		
