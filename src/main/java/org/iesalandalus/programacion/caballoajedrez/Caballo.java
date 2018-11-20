@@ -11,7 +11,7 @@ public class Caballo {
 	
 	// Constructores
 	
-	public Caballo(Color color, Posicion posicion) {
+	public Caballo() {
 		
 		this.posicion = new Posicion(8,'b');
 		this.color = colorn;
