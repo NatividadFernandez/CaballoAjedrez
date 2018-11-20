@@ -56,7 +56,7 @@ public class Posicion {
 
 	}
 
-	// Metodos equals y hascode
+	// Metodos equals y hasCode
 
 	@Override
 	public int hashCode() {
