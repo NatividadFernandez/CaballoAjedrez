@@ -1,30 +1,32 @@
 package org.iesalandalus.programacion.caballoajedrez;
 
+import static org.junit.Assert.assertEquals;
+
 public class Caballo {
 	
 	// Variables
 	private Color color;
 	private Posicion posicion;
 	
-	private final Color colorb = Color.BLANCO;
-	private final Color colorn = Color.NEGRO;
+	/*private final Color colorb = Color.BLANCO;
+	private final Color colorn = Color.NEGRO;*/
 	
 	// Constructores
 	
 	public Caballo() {
 		
 		this.posicion = new Posicion(8,'b');
-		this.color = colorn;
+		this.color = Color.NEGRO;
 	}
 	
 	public Caballo(Color color) {
 		
-		if(this.color == colorb) {
+		if(color.equals(Color.BLANCO)) {
 			this.posicion = new Posicion(1,'b');
 			this.color = color;
 		} 
-		if (this.color == colorn) {
-			this.posicion = new Posicion(8,'d');
+		if (color.equals(Color.NEGRO)) {
+			this.posicion = new Posicion(8,'b');
 			this.color = color;
 		}
 		
