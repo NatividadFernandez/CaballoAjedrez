@@ -6,13 +6,13 @@ import org.junit.Test;
 
 public class PosicionTest {
 
-	/*@Test
+	@Test
 	public void constructorValidoTest() {
 		Posicion posicion;
 		posicion = new Posicion(1, 'a');
 		assertEquals(1, posicion.getFila());
 		assertEquals('a', posicion.getColumna());
-	}*/
+	}
 	
 	/*@Test
 	public void constructorNoValidoTest() {
@@ -87,7 +87,7 @@ public class PosicionTest {
 		}
 	}
 	*/
-	/*@Test
+	@Test
 	public void igualdadTest() {
 		Posicion posicion1, posicion2, posicion3, posicion4, posicion5;
 		posicion1 = new Posicion(1, 'a');
@@ -103,12 +103,12 @@ public class PosicionTest {
 		assertNotEquals(posicion2, posicion4);
 		assertEquals(posicion1, posicion5);
 		assertEquals(posicion1, posicion1);
-	}*/
+	}
 	
-	/*@Test
+	@Test
 	public void toStringTest() {
 		Posicion posicion = new Posicion(1, 'a');
 		assertEquals("[fila=1, columna=a]", posicion.toString());
-	}*/
+	}
 
 }
