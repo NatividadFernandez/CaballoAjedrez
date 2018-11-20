@@ -38,17 +38,27 @@ public class Caballo {
 
 		if (columna == 'b' || columna == 'g') {
 			if (color.equals(Color.BLANCO)) {
-				this.posicion = new Posicion(1,columna);
+				this.posicion = new Posicion(1, columna);
 				this.color = color;
 			}
 			if (color.equals(Color.NEGRO)) {
-				this.posicion = new Posicion(8,columna);
+				this.posicion = new Posicion(8, columna);
 				this.color = color;
 			}
 
 		} else {
 			throw new IllegalArgumentException("Letra no válida");
 		}
+
+	}
+
+	public Caballo(Caballo caballo) {
+
+		if (caballo == null) {
+			throw new IllegalArgumentException("No se puede copiar un caballo nulo.");
+		}
+		this.color = caballo.getColor();
+		this.posicion = new Posicion(caballo.getPosicion());
 
 	}
 
