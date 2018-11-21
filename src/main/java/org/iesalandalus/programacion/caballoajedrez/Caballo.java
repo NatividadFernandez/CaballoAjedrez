@@ -9,7 +9,6 @@ public class Caballo {
 	// Variables
 	private Color color;
 	private Posicion posicion;
-	private static final String ERROR_MOVIMIENTO = "Movimiento no permitido: ";
 
 	// Constructores
 
@@ -86,21 +85,17 @@ public class Caballo {
 		this.posicion = posicion;
 	}
 
-	// M�todo mover
+	// Método mover
 
 	public void mover(Direccion direccion/* , int pasos */) throws OperationNotSupportedException {
 		if (direccion == null) {
-			throw new IllegalArgumentException("La direcci�n no puede ser nula.");
+			throw new IllegalArgumentException("La dirección no puede ser nula.");
 		}
-		/*
-		 * if (pasos <= 0) { throw new
-		 * IllegalArgumentException("El n�mero de pasos debe ser mayor que cero."); }
-		 */
+		
 		switch (direccion) {
 		case ARRIBA_DERECHA:
 			try {
-				posicion.setFila(posicion.getColumna()/* + pasos */); // Arriba
-				posicion.setFila(posicion.getFila() /* + pasos */); // Derecha
+				posicion = new Posicion(posicion.getFila() + 2, (char)(posicion.getColumna() + 1));
 			} catch (IllegalArgumentException e) {
 				throw new OperationNotSupportedException("ERROR: Movimiento no válido.");
 			}
@@ -108,8 +103,7 @@ public class Caballo {
 
 		case ABAJO_DERECHA:
 			try {
-				posicion.setFila(posicion.getColumna()/* - pasos */); // Abajo
-				posicion.setFila(posicion.getFila()/* + pasos */); // Derecha
+				posicion = new Posicion(posicion.getFila() - 2, (char)(posicion.getColumna() + 1));
 			} catch (IllegalArgumentException e) {
 				throw new OperationNotSupportedException("ERROR: Movimiento no válido.");
 			}
@@ -117,8 +111,7 @@ public class Caballo {
 
 		case ARRIBA_IZQUIERDA:
 			try {
-				posicion.setFila(posicion.getColumna() /* + pasos */); // Arriba
-				posicion.setFila(posicion.getFila()/* - pasos */); // Izquierda
+				posicion = new Posicion(posicion.getFila() + 2, (char)(posicion.getColumna() - 1));
 			} catch (IllegalArgumentException e) {
 				throw new OperationNotSupportedException("ERROR: Movimiento no válido.");
 			}
@@ -126,8 +119,7 @@ public class Caballo {
 
 		case ABAJO_IZQUIERDA:
 			try {
-				posicion.setFila(posicion.getColumna() /*- pasos*/); // Abajo
-				posicion.setFila(posicion.getFila() /*- pasos*/); // Izquierda
+				posicion = new Posicion(posicion.getFila() - 2, (char)(posicion.getColumna() - 1));
 			} catch (IllegalArgumentException e) {
 				throw new OperationNotSupportedException("ERROR: Movimiento no válido.");
 			}
@@ -135,8 +127,8 @@ public class Caballo {
 
 		case DERECHA_ARRIBA:
 			try {
-				posicion.setFila(posicion.getFila()/* + pasos */); // Derecha
-				posicion.setFila(posicion.getColumna() /* + pasos */); // Arriba
+				posicion = new Posicion(posicion.getFila() + 1, (char)(posicion.getColumna() + 2));
+				
 			} catch (IllegalArgumentException e) {
 				throw new OperationNotSupportedException("ERROR: Movimiento no válido.");
 			}
@@ -144,8 +136,8 @@ public class Caballo {
 
 		case DERECHA_ABAJO:
 			try {
-				posicion.setFila(posicion.getFila()/* + pasos */); // Derecha
-				posicion.setFila(posicion.getColumna() /*- pasos*/); // Abajo
+				posicion = new Posicion(posicion.getFila() - 1 , (char)(posicion.getColumna() + 2));
+				
 			} catch (IllegalArgumentException e) {
 				throw new OperationNotSupportedException("ERROR: Movimiento no válido.");
 			}
@@ -153,8 +145,8 @@ public class Caballo {
 
 		case IZQUIERDA_ARRIBA:
 			try {
-				posicion.setFila(posicion.getFila()/* - pasos */); // Izquierda
-				posicion.setFila(posicion.getColumna()/* + pasos */); // Arriba
+				posicion = new Posicion(posicion.getFila() + 1, (char)(posicion.getColumna() -2 ));
+							
 			} catch (IllegalArgumentException e) {
 				throw new OperationNotSupportedException("ERROR: Movimiento no válido.");
 			}
@@ -162,8 +154,8 @@ public class Caballo {
 
 		case IZQUIERDA_ABAJO:
 			try {
-				posicion.setFila(posicion.getFila() /*- pasos*/); // Izquierda
-				posicion.setFila(posicion.getColumna() /*- pasos*/); // Abajo
+				posicion = new Posicion(posicion.getFila() - 1, (char)(posicion.getColumna() - 2));
+				
 			} catch (IllegalArgumentException e) {
 				throw new OperationNotSupportedException("ERROR: Movimiento no válido.");
 			}
