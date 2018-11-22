@@ -87,7 +87,7 @@ public class Caballo {
 
 	// Método mover
 
-	public void mover(Direccion direccion/* , int pasos */) throws OperationNotSupportedException {
+	public void mover(Direccion direccion) throws OperationNotSupportedException {
 		if (direccion == null) {
 			throw new IllegalArgumentException("La dirección no puede ser nula.");
 		}
@@ -162,6 +162,7 @@ public class Caballo {
 			break;
 
 		default:
+			System.out.println("Error de dirección");
 			break;
 		}
 	}
