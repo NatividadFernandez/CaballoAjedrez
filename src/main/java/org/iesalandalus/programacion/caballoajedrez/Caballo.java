@@ -26,11 +26,11 @@ public class Caballo {
 
 		if (color.equals(Color.BLANCO)) {
 			this.posicion = new Posicion(1, 'b');
-			this.color = color;
+			this.color = Color.BLANCO;
 		}
 		if (color.equals(Color.NEGRO)) {
 			this.posicion = new Posicion(8, 'b');
-			this.color = color;
+			this.color = Color.NEGRO;
 		}
 
 	}
@@ -44,11 +44,11 @@ public class Caballo {
 		if (columna == 'b' || columna == 'g') {
 			if (color.equals(Color.BLANCO)) {
 				this.posicion = new Posicion(1, columna);
-				this.color = color;
+				this.color = Color.BLANCO;
 			}
 			if (color.equals(Color.NEGRO)) {
 				this.posicion = new Posicion(8, columna);
-				this.color = color;
+				this.color = Color.NEGRO;
 			}
 
 		} else {

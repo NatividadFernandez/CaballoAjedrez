@@ -34,16 +34,13 @@ public class Posicion {
 
 	public void setFila(int fila) {
 		
-		if (fila < 1|| fila > 8) {
-			throw new IllegalArgumentException("ERROR: Fila no válida.");
-		}
 
-		/*if (fila >= 1 && fila <= 8) {
+		if (fila >= 1 && fila <= 8) {
 			this.fila = fila;
 		} else {
 			throw new IllegalArgumentException("ERROR: Fila no válida.");
-		}*/
-		this.fila = fila;
+		}
+	
 
 	}
 
@@ -52,16 +49,13 @@ public class Posicion {
 	}
 
 	public void setColumna(char columna) {
-		
-		if(columna < 'a' || columna > 'h') {
+	
+		if (columna >= 'a' && columna <= 'h') {
+			this.columna = columna;
+		} else {
 			throw new IllegalArgumentException("ERROR: Columna no válida.");
-		//if (columna >= 'a' && columna <= 'h') {
-			//this.columna = columna;
-		}/* else {
-			throw new IllegalArgumentException("ERROR: Columna no válida.");
-		}*/
+		}
 		
-		this.columna = columna;
 
 	}
 
@@ -96,7 +90,7 @@ public class Posicion {
 
 	@Override
 	public String toString() {
-		return "[fila=" + fila + ", columna=" + columna + "]";
+		return "[fila=" + getFila() + ", columna=" + getColumna() + "]";
 	}
 
 }

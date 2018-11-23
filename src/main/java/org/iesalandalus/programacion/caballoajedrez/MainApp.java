@@ -85,6 +85,7 @@ public class MainApp {
 		try {
 			caballo = new Caballo();
 			System.out.println(caballo.toString());
+			System.out.println(" ");
 		} catch (IllegalArgumentException i) {
 			System.out.println("Caballo mal creado");
 		}
@@ -95,6 +96,8 @@ public class MainApp {
 		try {
 			caballo = new Caballo(elegirColor());
 			System.out.println(caballo.toString());
+			System.out.println(" ");
+			
 		} catch (IllegalArgumentException i) {
 			System.out.println("Caballo mal creado");
 		}
@@ -107,7 +110,7 @@ public class MainApp {
 
 		while (!comprobarColor) {
 			System.out.println("Menú colores");
-			System.out.println("1.Blanco");
+			System.out.println("1.-Blanco");
 			System.out.println("2.-Negro");
 			System.out.println(" ");
 
@@ -125,7 +128,7 @@ public class MainApp {
 				comprobarColor = true;
 				break;
 			default:
-				System.out.println("Color erróneo");
+				System.out.println("Opción no válida");
 				System.out.println(" ");
 				break;
 			}
@@ -139,6 +142,7 @@ public class MainApp {
 		try {
 			caballo = new Caballo(elegirColor(), elegirColumnaInicial());
 			System.out.println(caballo.toString());
+			System.out.println(" ");
 		} catch (IllegalArgumentException i) {
 			System.out.println("Caballo mal creado");
 		}
@@ -169,7 +173,7 @@ public class MainApp {
 				comprobarChar = true;
 				break;
 			default:
-				System.out.println("Letra errónea");
+				System.out.println("Opción no válida");
 				System.out.println(" ");
 				break;
 			}
@@ -190,7 +194,7 @@ public class MainApp {
 
 				try {
 					caballo.mover(elegirDireccion());
-					caballo.getPosicion();
+					//caballo.getPosicion();
 					System.out.println(caballo.toString());
 					System.out.println(" ");
 					mover = true;
@@ -201,7 +205,7 @@ public class MainApp {
 					System.out.println("Mala posicion");
 				}
 
-			} // while (mover == true);
+			} 
 		}
 
 	}
