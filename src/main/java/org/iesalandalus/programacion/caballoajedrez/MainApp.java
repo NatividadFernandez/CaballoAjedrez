@@ -1,9 +1,6 @@
 package org.iesalandalus.programacion.caballoajedrez;
 
-import static org.junit.Assert.assertEquals;
-
 import javax.naming.OperationNotSupportedException;
-
 import org.iesalandalus.programacion.utilidades.*;
 
 public class MainApp {
@@ -11,8 +8,6 @@ public class MainApp {
 	static Caballo caballo = null;
 
 	public static void main(String[] args) {
-		// System.out.println("Programa para aprender a colocar y mover un caballo en el
-		// tablero de ajedrez");
 
 		ejecutarOpcion(elegirOpcion());
 
@@ -194,7 +189,6 @@ public class MainApp {
 
 				try {
 					caballo.mover(elegirDireccion());
-					//caballo.getPosicion();
 					System.out.println(caballo.toString());
 					System.out.println(" ");
 					mover = true;
